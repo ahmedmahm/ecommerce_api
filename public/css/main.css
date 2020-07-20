@@ -24,13 +24,14 @@ nav{
     justify-content: space-around;
     width: 30%;
 }
-.nav-links li{
+.nav-links .nav-right{
+
     list-style: none;
 }
 .nav-links a {
     color: rgb(226, 226, 226);
     text-decoration: none;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     font-weight: bold;
     font-size: 14px;
 }

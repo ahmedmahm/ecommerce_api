@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
+    protected $table = "orders";
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      * An Order belongs to one user

@@ -14,8 +14,8 @@
                 <h4>Tra Monte</h4>
             </div>
             <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">github</a></li>
+                <li class="nav-right"><a href="{{route('home')}}">Home</a></li>
+                <li class="nav-right"><a href="#">login</a></li>
 
             </ul>
             <div class="burger">
