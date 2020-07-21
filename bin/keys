@@ -1,5 +1,4 @@
 #!/bin/bash
 
-cp .env.example .env
 php artisan:generate
 php artisan jwt:secret
