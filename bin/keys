@@ -1,4 +1,7 @@
 #!/bin/bash
 
+echo Generating public Key
 php artisan key:generate
+
+echo Generating JWT Secret Key
 php artisan jwt:secret

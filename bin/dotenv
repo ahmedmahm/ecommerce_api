@@ -1,3 +1,4 @@
 #!/bin/bash
 
+echo Coping varaibles to .env
 cp .env.example .env
