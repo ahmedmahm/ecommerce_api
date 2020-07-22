@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo Install vue.js ...
+npm install -g @vue/cli
+
+echo Vue VERSION
+vue --version

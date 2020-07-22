@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo Getting DOCKER ID
+
+ID=`docker ps -aqf name=php-monte`
+echo PHP DOCKER ID IS $ID
+
+docker exec -it $ID /bin/bash
+
