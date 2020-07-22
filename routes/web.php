@@ -17,3 +17,4 @@ use Illuminate\Support\Facades\Route;
     return view('home');
 });*/
 Route::view('/','home')->name('home');
+Route::get('account', 'AccountController@index');
