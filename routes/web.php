@@ -16,5 +16,4 @@ use Illuminate\Support\Facades\Route;
 /*Route::get('/', function () {
     return view('home');
 });*/
-Route::view('/','home')->name('home');
-Route::get('account', 'AccountController@index');
+Route::view('/','welcome');

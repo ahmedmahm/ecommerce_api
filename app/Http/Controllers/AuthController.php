@@ -28,18 +28,13 @@ class AuthController extends Controller
      */
     public function login(Request $request)
     {
-        //$credentials = request(['email', 'password']);
+        $credentials = request(['email', 'password']);
 
-        if (! $token = auth()->attempt($request->all())) {
+        if (! $token = auth()->attempt($credentials)) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
 
-        return response([
-            'status' => 'loggedin',
-            'data' => auth()->user(),
-            'payload' => \auth()->payload(),
-            'token' => $token
-        ])->header('Authorization', 'Bearer ' . $token);
+        return $this->respondWithToken($token);
     }
 
 
