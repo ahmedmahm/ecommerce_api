@@ -64,11 +64,12 @@ class VerificationController extends Controller
      */
     public function verify(Request $request)
     {
-
-     /*   auth()->attempt($request->route('id'));
+        $id = $request->route('id');
+        $get_user = new User();
+        auth()->login($get_user->find($id));
         if($request->route('id') != $request->user()->getKey()){
             throw new AuthenticationException;
-        }*/
+        }
 
         if($request->user()->hasVerifiedEmail()){
             return response()->json([
