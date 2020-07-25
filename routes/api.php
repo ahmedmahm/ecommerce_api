@@ -29,3 +29,9 @@ Route::group([
 
 });
 
+//Emails
+Route::post('send','Mail\MailController@sendWelcomeMail');
+
+//Auth
+Route::get('/email/resend','VerificationController@resend')->name('verification.resend');
+Route::get('/email/verify/{id}/{hash}','VerificationController@verify')->name('verification.verify');
