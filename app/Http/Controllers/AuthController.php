@@ -59,13 +59,10 @@ class AuthController extends Controller
             'password' => Hash::make($request['password']),
         ]);
 
-        $credentials = request(['email', 'password']);
-
-        if (! $token = auth()->attempt($credentials)) {
-            return response()->json(['error' => 'Unauthorized'], 401);
-        }
-
-        return $this->respondWithToken($token);
+        return response()->json([
+            'status' => 'Sucssesful',
+            'message' => 'User Created',
+        ],200);
     }
 
     /**
