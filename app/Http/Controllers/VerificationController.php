@@ -80,8 +80,6 @@ class VerificationController extends Controller
         if($request->user()->markEmailAsVerified()){
             event(new Verified($request->user()));
         }
-        return response()->json([
-            'message' => 'Successfully Verified'
-        ]);
+        return redirect()->to('http://localhost:8080/dashboard');
     }
 }
