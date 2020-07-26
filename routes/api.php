@@ -27,6 +27,21 @@ Route::group([
     Route::post('refresh', 'AuthController@refresh');
     Route::get('me', 'AuthController@me');
 
+
+
+});
+
+Route::group([
+    'middleware' => 'api',
+], function(){
+    /// Address Routing
+    Route::get('addresses', 'Logic\AdressController@index');
+    Route::get('addresses/{address}', 'Logic\AdressController@show');
+    Route::post('addresses', 'Logic\AdressController@store');
+    Route::put('addresses/{address}', 'Logic\AdressController@update');
+    Route::delete('addresses/{address}', 'Logic\AdressController@destroy');
+    /// End Of Address Routing
+
 });
 
 //Emails

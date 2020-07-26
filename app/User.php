@@ -18,7 +18,7 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'first_name' ,'email', 'password', 'phone'
     ];
 
     /**
@@ -65,7 +65,13 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      * Each User can have many Orders
      */
-    public function orders(){
+    public function orders()
+    {
         return $this->hasMany('App\Order');
+    }
+
+    public function addresses()
+    {
+        return $this->hasMany('App\Address','user_id','user_id');
     }
 }
