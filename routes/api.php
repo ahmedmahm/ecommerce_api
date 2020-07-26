@@ -41,6 +41,7 @@ Route::group([
     Route::put('addresses/{address}', 'Logic\AdressController@update');
     Route::delete('addresses/{address}', 'Logic\AdressController@destroy');
     /// End Of Address Routing
+
 });
 
 //Emails
