@@ -13,10 +13,7 @@ class MailController extends Controller
 {
     public function sendWelcomeMail(Request $request)
     {
-        $name = $request['name'];
-        $email = $request['email'];
-        $user = new User();
-        Mail::to($email)->send(new Welcome($name));
+        Mail::to('ahmedmahmoud.1@gmx.de')->send(new Welcome());
         return response()->json(['status' => 'Email Sent'],200);
     }
 }
