@@ -6,19 +6,23 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use GoldSpecDigital\LaravelEloquentUUID\Database\Eloquent\Uuid;
 
 
 class User extends Authenticatable implements JWTSubject, MustVerifyEmail
 {
-    use Notifiable;
+    use Notifiable, Uuid;
 
+    protected $keyType = 'string';
+    public $incrementing = false;
+    protected $guarded = [];
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'first_name' ,'email', 'password', 'phone'
+        'id','name', 'first_name' ,'email', 'password', 'phone'
     ];
 
     /**
@@ -72,6 +76,6 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail
 
     public function addresses()
     {
-        return $this->hasMany('App\Address','user_id','user_id');
+        return $this->hasMany('App\Address','user_id','id');
     }
 }
