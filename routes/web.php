@@ -17,3 +17,4 @@ use Illuminate\Support\Facades\Route;
     return view('home');
 });*/
 Route::view('/','welcome');
+Route::get('/sendMail','Mail\MailController@sendWelcomeMail');
