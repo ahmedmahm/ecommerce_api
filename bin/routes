@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo GETTING ROUTES
+php artisan route:list
