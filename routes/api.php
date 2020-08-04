@@ -50,3 +50,7 @@ Route::post('send','Mail\MailController@sendWelcomeMail');
 //Auth
 Route::get('/email/resend','VerificationController@resend')->name('verification.resend');
 Route::get('/email/verify/{id}/{hash}','VerificationController@verify')->name('verification.verify');
+
+
+Route::post('products','Logic\ProductController@store');
+Route::get('products','Logic\ProductController@index');
