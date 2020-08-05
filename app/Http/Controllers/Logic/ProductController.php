@@ -25,7 +25,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return response()->json(['args' => 'category - qr - name - description - price - image'],200);
     }
 
     /**
