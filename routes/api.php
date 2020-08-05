@@ -32,7 +32,7 @@ Route::group([
 });
 
 Route::group([
-    'middleware' => 'api',
+    'middleware' => ['api'],
 ], function(){
     /// Address Routing
     Route::get('addresses', 'Logic\AdressController@index');
@@ -43,7 +43,6 @@ Route::group([
     /// End Of Address Routing
 
 });
-
 //Emails
 Route::post('send','Mail\MailController@sendWelcomeMail');
 
@@ -54,3 +53,4 @@ Route::get('/email/verify/{id}/{hash}','VerificationController@verify')->name('v
 
 Route::post('products','Logic\ProductController@store');
 Route::get('products','Logic\ProductController@index');
+Route::get('products_args','Logic\ProductController@create');

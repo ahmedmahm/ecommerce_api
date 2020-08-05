@@ -40,7 +40,6 @@ class AdressController extends Controller
     public function store(Request $request)
     {
         $user_id = auth()->user()->id;
-        var_dump($user_id);
         $addresses = DB::table('addresses')->where(['user_id'=>$user_id,'type'=>0])->get();
         if(count($addresses) >= 1 && $request['type'] == 0){
             return response(['msg'=>'primary Address exists'],404);
@@ -50,6 +49,7 @@ class AdressController extends Controller
                 'type'    => $request['type'],
                 'street'  => ucfirst($request['street']),
                 'plz'     => $request['plz'],
+                'state' => $request['state'],
                 'city'    => ucfirst($request['city']),
                 'country' => ucfirst($request['country'])
             ];
@@ -58,6 +58,7 @@ class AdressController extends Controller
                 return response(['msg'=>'Address Added'],201);
 
         }
+        return response()->json([],200);
 
     }
 
